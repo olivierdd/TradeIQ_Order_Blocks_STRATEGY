@@ -10,6 +10,7 @@
 //  - Because OB's need to be drawn for the script to work, you need to change the scale of the window below the main chart manually
 //    so that only the lables and signals are visible (and boxes kept outside of visible range)
 
+
 //@version=5
 
 indicator(title='TradeIQ Order Blocks', shorttitle='TradeIQ OB', overlay=false, max_labels_count=500)
@@ -32,6 +33,23 @@ col_bullish = input.color(#5db49e, title="Bullish OB Border", inline="a", group=
 col_bullish_ob = input.color(color.new(#64C4AC, 85), title="Background", inline="a", group="Order Block")
 col_bearish = input.color(#4760bb, title="Bearish OB Border", inline="b", group="Order Block")
 col_bearish_ob = input.color(color.new(#506CD3, 85), title="Background", inline="b", group="Order Block")
+
+// Boom Pro parameters
+showfib = input.bool(defval=false, title='Show Fibonacci Lines?', group='Boom Pro Main Settings', inline='main2')
+showentry = input.bool(defval=true, title='Show Entry and Exit Points?', group='Boom Pro Main Settings')
+square = input.bool(true, title='Square Line?', group='Boom Pro Main Settings')
+showdboom = input.bool(true, title='Show Downward Boom Line?', group='Boom Pro Main Settings')
+showlongs = input.bool(true, title='Show Long Entries?', group='Boom Pro Main Settings')
+showshorts = input.bool(true, title='Show Short Entries?', group='Boom Pro Main Settings')
+// Boom Pro Quotient
+LPPeriod = input.int(6, title='Quotient | LPPeriod', inline='quotient', group='Boom Pro EOT 1 (Main Oscillator)')
+K1 = input.int(0, title='K1', inline='quotient', group='Boom Pro EOT 1 (Main Oscillator)')
+K2 = 0.3
+esize = 60  //, title = "Size", inline = "quotient2", group = "EOT 1 (Main Oscillator)")
+ey = 50  //, title = "Y axis", inline = "quotient2", group = "EOT 1 (Main Oscillator)")
+trigno = input.int(2, 'Trigger Length', group='Boom Pro EOT 1 (Main Oscillator)', inline='quotient2')
+osccol = input.color(color.blue, title='Oscillator Color:', group='Boom Pro EOT 1 (Main Oscillator)', inline='q2')
+trigcol = input.color(color.white, title='Trigger Color:', group='Boom Pro EOT 1 (Main Oscillator)', inline='q2')
 
 // // Alerts
 // buy_alert = input.bool(title='Buy Signal', defval=true, group='Alerts', tooltip='An alert will be sent when price goes below the top of a bullish order block.')

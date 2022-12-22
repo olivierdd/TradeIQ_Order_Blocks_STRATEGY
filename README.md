@@ -4,6 +4,9 @@ This pinescript replicates the trading strategy from TradeIQ published on YouTub
 
 At this stage the script is under development :
 - [done]	Objective 1 : replicate the order block computation, write code to identify when price touches an OB (without disabling it) and generate buy / sell signal
-- [ongoing]	Objective 2 : extend code to generate buy / sell signal only of price comes back to the OB for the n-th time (n being configurable)
-- [ ]		Objective 3 : integrate Boom Hunter Pro algorithm in code and generate buy / sell signal
-- [ ]		Objective 4 : combine both signals
+- [done]	Objective 2 : extend code to generate buy / sell signal only of price comes back to the OB for the n-th time (n being configurable)
+- [to do]		Objective 3 : integrate Boom Hunter Pro algorithm in code and generate buy / sell signal
+- [to do]		Objective 4 : combine both signals
+
+I saved the two original scripts for reference : "Sonarlabs - Order Block Finder" and "Boom Hunter Pro"
+
