@@ -13,7 +13,7 @@
 
 //@version=5
 
-indicator(title='TradeIQ Order Blocks', shorttitle='TradeIQ OB', overlay=false, max_labels_count=500)
+indicator(title='TradeIQ Order Blocks + Boom', shorttitle='TradeIQ OB / BOOM', overlay=false, max_labels_count=500)
 //_v = input.string("1.0.2", title="Version", options=["1.0.2"], group="Sonarlab.io", tooltip="This is a free script based on our premium Smart Money Concepts (SMC) indicator. Get a free trial of our SMC indicator by visiting our website.\nhttps://www.sonarlab.io")
 
 // -------------------------------
@@ -607,8 +607,8 @@ plotshape(ta.barssince(ta.crossunder(wt2,20)) <= 1 and ta.crossover(wt2,20) ? wt
 // -------------------------------
 
 
-plot(buy_signal ? 500 : 0, "OB Buy Signal", color=color.green)
-plot(sell_signal ? -500 : 0, "OB Sell Signal", color=color.red)
+plot(buy_signal ? 50 : 0, "OB Buy Signal", color=color.green)
+plot(sell_signal ? -50 : 0, "OB Sell Signal", color=color.red)
 
 alertcondition(buy_signal, "OB Buy Signal")
 alertcondition(sell_signal, "OB Sell Signal")
